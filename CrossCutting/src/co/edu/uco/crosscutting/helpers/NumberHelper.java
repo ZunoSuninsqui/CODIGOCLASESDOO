@@ -163,17 +163,4 @@ public class NumberHelper {
             return numero > limiteInferior && numero < limiteSuperior;
         }
     }
-
-    public static void main(String[] args) {
-        System.out.println("Suma: " + sumar(10, 5));
-        System.out.println("Resta: " + restar(10.5, 5));
-        System.out.println("Multiplicación: " + multiplicar(10, 3));
-        System.out.println("División: " + dividir(10, 2));
-        System.out.println("10 elevado a 2: " + elevar(10, 2));
-        System.out.println("¿Es primo 7?: " + (esPrimo(7) ? "Sí" : "No"));
-        System.out.println("Valor absoluto de -15: " + valorAbsoluto(-15));
-        System.out.println("¿Es negativo -10?: " + esNegativo(-10));
-        System.out.println("¿Texto convertido a número: " + convertirTextoANumero("123.45"));
-        System.out.println("¿Está en rango [1, 5)?: " + estaEnRango(3, 1, 5, true, false));
-    }
 }
