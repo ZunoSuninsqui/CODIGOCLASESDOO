@@ -2,9 +2,6 @@ package co.edu.uco.crosscutting.helpers;
 
 public class GenericNumberHelper {
 
-	private static final int CERO_INT = 0;
-	private static final double CERO_DOUBLE = 0.0;
-
 	public static <T extends Number> boolean isNull(T number) {
 		return number == null;
 	}
