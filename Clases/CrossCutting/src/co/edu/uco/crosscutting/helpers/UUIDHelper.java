@@ -21,6 +21,9 @@ public final class UUIDHelper {
 	public static final UUID getDefault() {
 		return convertToUUID(DEFAULT_UUID_STRING);
 	}
+	public static final String getDefaultAsString() {
+		return DEFAULT_UUID_STRING;
+	}
 
 	public static final UUID generate() {
 		return UUID.randomUUID();

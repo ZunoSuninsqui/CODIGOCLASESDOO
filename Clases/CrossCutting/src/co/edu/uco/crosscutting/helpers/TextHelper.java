@@ -2,7 +2,7 @@ package co.edu.uco.crosscutting.helpers;
 
 public class TextHelper {
 	
-	private static final String EMPTY = "";
+	public static final String EMPTY = "";
 	
 	private TextHelper() {
 		
