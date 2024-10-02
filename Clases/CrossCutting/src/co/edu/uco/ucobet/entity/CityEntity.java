@@ -5,46 +5,46 @@ import java.util.UUID;
 import co.edu.uco.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
-import co.edu.uco.ucobet.dto.CountryDTO;
+import co.edu.uco.ucobet.dto.CityDTO;
 import co.edu.uco.ucobet.dto.StateDTO;
 
-public class StateEntity extends DomainEntity{
+public class CityEntity extends DomainEntity {
 	private String name;
-	private CountryEntity country;
+	private StateEntity state;
 	
-	public StateEntity() {
+	public CityEntity() {
 		super(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
-		setCountry(CountryEntity.create());
+		setState(new StateEntity());
 	}
 	
-	public static final StateDTO create() {
-		return new StateDTO();
+	public static final StateEntity create() {
+		return new StateEntity();
 	}
 	
 	public String getName() {
 		return name;
 	}
-	public void setName(final String name) {
-		this.name = TextHelper.applyTrim(name);
-	}
-	
 
-	@Override
+	public CityEntity setName(String name) {
+		this.name = TextHelper.applyTrim(name);
+		return this;
+	}
+
 	public void setId(final UUID id) {
 		super.setId(id);
+		
 	}
 	@Override
 	public UUID getId() {
 		return super.getId();
 	}
-	public CountryEntity getCountry() {
-		return country;
+	public StateEntity getState() {
+		return state;
 	}
-	public StateEntity setCountry(final CountryEntity country) {
-		this.country = ObjectHelper.getDefault(country, new CountryEntity());
+	public CityEntity setState(final StateEntity state) {
+		this.state = ObjectHelper.getDefault(state, new StateEntity());
 		return this;
 	}
-	
 
 }

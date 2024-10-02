@@ -35,6 +35,9 @@ public class CityDTO extends DomainDTO{
 	public String getId() {
 		return super.getId();
 	}
+	public StateDTO getState() {
+		return state;
+	}
 	public CityDTO setState(final StateDTO state) {
 		this.state = ObjectHelper.getDefault(state, StateDTO.create());
 		return this;
