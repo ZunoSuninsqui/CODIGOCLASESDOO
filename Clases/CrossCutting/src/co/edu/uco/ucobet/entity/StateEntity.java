@@ -1,16 +1,17 @@
-package co.edu.uco.ucobet.dto;
+package co.edu.uco.ucobet.entity;
 
 import co.edu.uco.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
+import co.edu.uco.ucobet.dto.CountryDTO;
+import co.edu.uco.ucobet.dto.StateDTO;
 
-public class StateDTO extends DomainDTO {
-	
+public class StateEntity {
 	private String name;
 	private CountryDTO country;
 	
-	public StateDTO() {
-		super(UUIDHelper.getDefaultAsString());
+	public StateEntity() {
+		super(UUIDHelper.getDefault());
 		setName(TextHelper.EMPTY);
 		setCountry(CountryDTO.create());
 	}
@@ -37,8 +38,7 @@ public class StateDTO extends DomainDTO {
 		return super.getId();
 	}
 	public StateDTO setCountry(final CountryDTO country) {
-		this.country = ObjectHelper.getDefault(country, CountryDTO.create());
-		return this;
+		this.country = ObjectHelper.getDefault(country, CountryDTO.create())
 	}
 	
 

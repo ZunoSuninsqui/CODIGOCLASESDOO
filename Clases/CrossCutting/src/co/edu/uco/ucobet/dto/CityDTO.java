@@ -4,15 +4,14 @@ import co.edu.uco.crosscutting.helpers.ObjectHelper;
 import co.edu.uco.crosscutting.helpers.TextHelper;
 import co.edu.uco.crosscutting.helpers.UUIDHelper;
 
-public class StateDTO extends DomainDTO {
-	
+public class CityDTO extends DomainDTO{
 	private String name;
-	private CountryDTO country;
+	private StateDTO state;
 	
-	public StateDTO() {
+	public CityDTO() {
 		super(UUIDHelper.getDefaultAsString());
 		setName(TextHelper.EMPTY);
-		setCountry(CountryDTO.create());
+		setState(StateDTO.create());
 	}
 	
 	public static final StateDTO create() {
@@ -23,12 +22,12 @@ public class StateDTO extends DomainDTO {
 		return name;
 	}
 
-	public StateDTO setName(String name) {
+	public CityDTO setName(String name) {
 		this.name = TextHelper.applyTrim(name);
 		return this;
 	}
 
-	public StateDTO setId(final String id) {
+	public CityDTO setId(final String id) {
 		super.setIdentifier(id);
 		return this;
 	}
@@ -36,10 +35,8 @@ public class StateDTO extends DomainDTO {
 	public String getId() {
 		return super.getId();
 	}
-	public StateDTO setCountry(final CountryDTO country) {
-		this.country = ObjectHelper.getDefault(country, CountryDTO.create());
+	public CityDTO setState(final StateDTO state) {
+		this.state = ObjectHelper.getDefault(state, StateDTO.create());
 		return this;
 	}
-	
-
 }
