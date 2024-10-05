@@ -13,25 +13,41 @@
     </properties>
 
     <build>
-        <sourceDirectory>Clases/CrossCutting/src</sourceDirectory>
-        <resources>
-            <resource>
-                <directory>Clases/CrossCutting/src</directory>
-                <includes>
-                    <include>**/*.properties</include>
-                </includes>
-            </resource>
-        </resources>
-    </build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.0.0-M5</version>
+        </plugin>
+    </plugins>
+</build>
+
 
     <dependencies>
-        <!-- Dependencia para JUnit 4.x -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.2</version>
-            <scope>test</scope>
-        </dependency>
+    <!-- JUnit Jupiter API and Test Engine -->
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>5.9.0</version>
+        <scope>test</scope>
+    </dependency>
+
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>5.9.0</version>
+        <scope>test</scope>
+    </dependency>
+
+    <!-- JUnit Jupiter Assertions -->
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-params</artifactId>
+        <version>5.9.0</version>
+        <scope>test</scope>
+    </dependency>
+</dependencies>
+
 
         <!-- Dependencias adicionales según tus necesidades -->
     </dependencies>
